@@ -54,11 +54,7 @@ The word **Temporary** is included in relevant UI copy so fictional information 
 python3 -m http.server 8000
 ```
 
-Open:
-
-```text
-http://localhost:8000
-```
+[Visit Local Website](http://localhost:8000)
 
 ## Production checklist
 
