@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PrimaryButton from '../../components/ui/PrimaryButton.astro';
+import { services } from '../../data/services';
+
+export function getStaticPaths() {
+  return services.map(service => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<Layout title={`${service.title} | Services | Akash Software Limited`} description={service.description}>
+  <div class="page-header">
+    <div class="container">
+      <span class="icon-large">{service.icon}</span>
+      <h1>{service.title}</h1>
+      <p>{service.description}</p>
+    </div>
+  </div>
+
+  <section class="details">
+    <div class="container">
+      <div class="grid">
+        <div class="main-content">
+          <h2>Capabilities</h2>
+          <p>
+            We provide comprehensive {service.title.toLowerCase()} services tailored to your business needs. 
+            Our approach focuses on quality, scalability, and delivering a superior user experience.
+          </p>
+          
+          <h3>Development Process</h3>
+          <ol class="process-list">
+            <li><strong>Discovery:</strong> Understanding your requirements and objectives.</li>
+            <li><strong>Architecture:</strong> Designing a robust and scalable system.</li>
+            <li><strong>Development:</strong> Agile execution with regular milestones.</li>
+            <li><strong>Testing:</strong> Rigorous QA to ensure reliability.</li>
+            <li><strong>Deployment & Support:</strong> Seamless launch and ongoing maintenance.</li>
+          </ol>
+        </div>
+        
+        <div class="sidebar">
+          <div class="tech-card">
+            <h3>Technologies</h3>
+            <ul class="tech-list">
+              {service.technologies.map(tech => (
+                <li>{tech}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to get started?</h2>
+      <PrimaryButton text="Discuss Your Project" href="/asl-portfolio/contact" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .page-header {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 120px 0;
+    text-align: center;
+  }
+
+  .icon-large {
+    font-size: 64px;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    font-size: 56px;
+    margin: 0 0 16px 0;
+  }
+
+  .page-header p {
+    font-size: 20px;
+    color: var(--color-light-blue);
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .details {
+    padding: 112px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 64px;
+  }
+
+  .main-content h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .main-content h3 {
+    font-size: 24px;
+    margin-top: 48px;
+    margin-bottom: 24px;
+  }
+
+  .main-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-muted-text);
+  }
+
+  .process-list {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-muted-text);
+    padding-left: 20px;
+  }
+
+  .process-list li {
+    margin-bottom: 16px;
+  }
+
+  .process-list strong {
+    color: var(--color-primary-navy);
+  }
+
+  .tech-card {
+    background-color: var(--color-light-blue);
+    padding: 32px;
+    border-radius: var(--radius-card);
+  }
+
+  .tech-card h3 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 22px;
+  }
+
+  .tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tech-list li {
+    background-color: var(--color-white);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: var(--color-primary-navy);
+    border: 1px solid var(--color-border);
+  }
+
+  .cta-section {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 96px 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--color-white);
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 40px;
+    }
+  }
+</style>

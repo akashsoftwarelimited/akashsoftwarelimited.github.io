@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrimaryButton from '../components/ui/PrimaryButton.astro';
+import SecondaryButton from '../components/ui/SecondaryButton.astro';
+---
+
+<Layout title="Page Not Found | Akash Software Limited">
+  <div class="not-found">
+    <div class="container">
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <p>The page you're looking for doesn't exist or may have moved.</p>
+      <div class="actions">
+        <PrimaryButton text="Back to Home" href="/asl-portfolio/" />
+        <SecondaryButton text="Contact Us" href="/asl-portfolio/contact" />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .not-found {
+    padding: 120px 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 120px;
+    color: var(--color-cyan);
+    margin: 0;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 40px;
+    margin: 24px 0 16px;
+  }
+
+  p {
+    font-size: 20px;
+    color: var(--color-muted-text);
+    margin-bottom: 48px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 80px;
+    }
+    h2 {
+      font-size: 32px;
+    }
+    .actions {
+      flex-direction: column;
+    }
+  }
+</style>

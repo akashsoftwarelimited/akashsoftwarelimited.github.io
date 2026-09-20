@@ -1,0 +1,239 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrimaryButton from '../components/ui/PrimaryButton.astro';
+import SecondaryButton from '../components/ui/SecondaryButton.astro';
+import ServiceCard from '../components/cards/ServiceCard.astro';
+import ProjectCard from '../components/cards/ProjectCard.astro';
+
+import { services } from '../data/services';
+import { projects } from '../data/projects';
+
+const featuredServices = services.filter(s => s.featured);
+const featuredProjects = projects.filter(p => p.featured);
+---
+
+<Layout title="Akash Software Limited | Engineering & Digital Solutions" description="Akash Software Limited helps businesses transform ideas into scalable digital products.">
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="eyebrow">SOFTWARE ENGINEERING & DIGITAL SOLUTIONS</span>
+      <h1>Building Digital Products That Move Businesses Forward.</h1>
+      <p class="description">
+        Akash Software Limited helps businesses transform ideas into scalable, reliable, and user-focused digital products through modern software engineering.
+      </p>
+      <div class="hero-actions">
+        <PrimaryButton text="Start a Project" href="/asl-portfolio/contact" />
+        <SecondaryButton text="Explore Our Services" href="/asl-portfolio/services" />
+      </div>
+      <div class="tech-tags">
+        <span class="tag">Mobile</span>
+        <span class="tag">Web</span>
+        <span class="tag">Cloud</span>
+        <span class="tag">Enterprise</span>
+        <span class="tag">AI</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-preview">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Comprehensive engineering solutions for modern businesses.</p>
+      </div>
+      <div class="services-grid">
+        {featuredServices.map(service => (
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            icon={service.icon}
+            href={`/asl-portfolio/services/${service.slug}`}
+          />
+        ))}
+      </div>
+      <div class="view-all-wrapper">
+        <SecondaryButton text="View All Services" href="/asl-portfolio/services" />
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-preview">
+    <div class="container">
+      <div class="section-header">
+        <h2>Selected Projects</h2>
+        <p>A glimpse into the digital products we've brought to life.</p>
+      </div>
+      <div class="projects-grid">
+        {featuredProjects.map(project => (
+          <ProjectCard
+            title={project.title}
+            category={project.category}
+            image={project.image}
+            href={`/asl-portfolio/projects/${project.slug}`}
+          />
+        ))}
+      </div>
+      <div class="view-all-wrapper">
+        <SecondaryButton text="View All Projects" href="/asl-portfolio/projects" />
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container cta-content">
+      <h2>Ready to Build Something Great?</h2>
+      <p>Tell us about your idea, product or business challenge.</p>
+      <PrimaryButton text="Contact Us Today" href="/asl-portfolio/contact" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .section-header h2 {
+    font-size: 44px;
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    font-size: 20px;
+    color: var(--color-muted-text);
+  }
+
+  .view-all-wrapper {
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 120px 0;
+    background-color: var(--color-light-blue);
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-bright-blue);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.03em;
+  }
+
+  .description {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--color-muted-text);
+    margin: 0 0 40px 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .tag {
+    background-color: var(--color-white);
+    border: 1px solid rgba(0, 169, 204, 0.25);
+    color: var(--color-primary-navy);
+    padding: 4px 16px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* Services Preview */
+  .services-preview {
+    padding: 112px 0;
+    background-color: var(--color-white);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  /* Projects Preview */
+  .projects-preview {
+    padding: 112px 0;
+    background-color: var(--color-light-blue);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    padding: 112px 0;
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .final-cta h2 {
+    color: var(--color-white);
+    font-size: 44px;
+    margin-bottom: 16px;
+  }
+
+  .final-cta p {
+    font-size: 20px;
+    color: var(--color-light-blue);
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 40px;
+    }
+    .hero-actions {
+      flex-direction: column;
+    }
+    .services-grid, .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

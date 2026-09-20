@@ -1,0 +1,42 @@
+---
+interface Props {
+  text: string;
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  className?: string;
+}
+
+const { text, href, type = 'button', className = '' } = Astro.props;
+---
+{href ? (
+  <a href={href} class={`btn-primary ${className}`}>
+    {text}
+  </a>
+) : (
+  <button type={type} class={`btn-primary ${className}`}>
+    {text}
+  </button>
+)}
+
+<style>
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bright-blue);
+    color: var(--color-white);
+    padding: 14px 28px;
+    border-radius: var(--radius-button);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-navy);
+  }
+</style>

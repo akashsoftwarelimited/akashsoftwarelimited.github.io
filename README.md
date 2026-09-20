@@ -1,92 +1,46 @@
-# ASL Portfolio Website
+# Astro Starter Kit: Basics
 
-A polished, responsive company portfolio website for Akash Software Limited.
-
-## Current version
-
-This version is intentionally written as an **actual company-site structure**, not a generic portfolio template.
-
-It includes:
-
-- Hero / positioning
-- Company approach
-- Services
-- Capability statistics
-- Selected work / case studies
-- About ASL
-- Industries
-- Delivery process
-- Technology capabilities
-- Contact CTA
-- Responsive navigation
-- Accessibility-friendly skip link
-- Reduced-motion support
-- SEO and Open Graph metadata
-- Subtle viewport reveal animation
-
-## Temporary company information
-
-Some content is intentionally temporary and must be replaced before production:
-
-- `hello@akashsoftware.com`
-- `+880 1700-000000`
-- Dhaka, Bangladesh positioning
-- Statistics
-- Selected projects / case studies
-- Industries
-- Technology list
-- Company positioning copy
-
-The word **Temporary** is included in relevant UI copy so fictional information is not accidentally presented as verified company data.
-
-## Stack
-
-- Semantic HTML5
-- Modern CSS
-- Vanilla JavaScript
-- Google Fonts
-- No framework
-- No build step
-
-## Run locally
-
-```bash
-python3 -m http.server 8000
+```sh
+npm create astro@latest -- --template basics
 ```
 
-[Visit Local Website](http://localhost:8000)
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Production checklist
+## 🚀 Project Structure
 
-Before publishing:
+Inside of your Astro project, you'll see the following folders and files:
 
-1. Replace all temporary company information.
-2. Add verified company address, phone and email.
-3. Add real project screenshots and case studies.
-4. Add real company statistics only where defensible.
-5. Add official social links.
-6. Add favicon and social sharing image.
-7. Add `robots.txt`.
-8. Add `sitemap.xml`.
-9. Configure the production domain.
-10. Add analytics only after deciding the site's privacy requirements.
-11. Optimize real images to WebP/AVIF.
-12. Test Lighthouse/Core Web Vitals.
-13. Test keyboard navigation and screen readers.
-14. Add a real contact form/backend if required.
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
-## Recommended next content
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-The strongest next step is to collect ASL's real:
+## 🧞 Commands
 
-- company story
-- founding year
-- services
-- team size
-- client/project list
-- industries
-- technology stack
-- office/contact details
-- social profiles
+All commands are run from the root of the project, from a terminal:
 
-Then the temporary copy can be replaced without changing the overall design system.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

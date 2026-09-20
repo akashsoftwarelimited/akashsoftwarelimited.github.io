@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrimaryButton from '../components/ui/PrimaryButton.astro';
+---
+
+<Layout title="Contact Us | Akash Software Limited" description="Get in touch with Akash Software Limited to discuss your project.">
+  <div class="page-header">
+    <div class="container">
+      <h1>Let's Build Something Great Together.</h1>
+      <p>Tell us about your idea, product or business challenge.</p>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="grid">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <div class="info-item">
+            <strong>Email</strong>
+            <p>hello@akashsoftware.com</p>
+          </div>
+          <div class="info-item">
+            <strong>Phone</strong>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div class="info-item">
+            <strong>Office Address</strong>
+            <p>123 Tech Boulevard<br />Suite 400<br />Innovation City, ST 12345</p>
+          </div>
+          <div class="info-item">
+            <strong>Business Hours</strong>
+            <p>Monday - Friday<br />9:00 AM - 6:00 PM EST</p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="inquiry-form" action="#" method="POST" onsubmit="event.preventDefault(); document.getElementById('success-message').style.display='block'; this.style.display='none';">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Doe" />
+              </div>
+              <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" required placeholder="jane@company.com" />
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="web">Web Development</option>
+                <option value="mobile">Mobile App Development</option>
+                <option value="cloud">Cloud Solutions</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+            </div>
+
+            <PrimaryButton type="submit" text="Send Inquiry" />
+          </form>
+
+          <div id="success-message" class="success-message" style="display: none;">
+            <h3>Thank you!</h3>
+            <p>Your inquiry has been received. We will get back to you shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .page-header {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 120px 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    font-size: 56px;
+    margin: 0 0 16px 0;
+  }
+
+  .page-header p {
+    font-size: 20px;
+    color: var(--color-light-blue);
+    margin: 0;
+  }
+
+  .contact-section {
+    padding: 112px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+  }
+
+  .contact-info h2 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+
+  .info-item {
+    margin-bottom: 24px;
+  }
+
+  .info-item strong {
+    display: block;
+    color: var(--color-primary-navy);
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  .info-item p {
+    color: var(--color-muted-text);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .contact-form {
+    background-color: var(--color-white);
+    padding: 48px;
+    border-radius: var(--radius-card-large);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 16px -2px rgba(11, 34, 51, 0.05);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-dark-text);
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--color-dark-text);
+    box-sizing: border-box;
+    transition: border-color 150ms ease;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-bright-blue);
+    box-shadow: 0 0 0 2px rgba(0, 109, 204, 0.18);
+  }
+
+  .success-message {
+    text-align: center;
+    padding: 48px 0;
+  }
+
+  .success-message h3 {
+    color: var(--color-primary-navy);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    .contact-form {
+      padding: 32px 24px;
+    }
+  }
+</style>

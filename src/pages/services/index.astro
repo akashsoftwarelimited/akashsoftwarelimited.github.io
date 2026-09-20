@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceCard from '../../components/cards/ServiceCard.astro';
+import PrimaryButton from '../../components/ui/PrimaryButton.astro';
+import { services } from '../../data/services';
+---
+
+<Layout title="Services | Akash Software Limited" description="Explore the engineering and digital services offered by Akash Software Limited.">
+  <div class="page-header">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>Comprehensive engineering solutions for modern businesses.</p>
+    </div>
+  </div>
+
+  <section class="services-list">
+    <div class="container">
+      <div class="grid">
+        {services.map(service => (
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            icon={service.icon}
+            href={`/asl-portfolio/services/${service.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Not sure where to start?</h2>
+      <p>Let's discuss your project and find the right solution.</p>
+      <PrimaryButton text="Contact Us" href="/asl-portfolio/contact" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .page-header {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 120px 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    font-size: 56px;
+    margin: 0 0 16px 0;
+  }
+
+  .page-header p {
+    font-size: 20px;
+    color: var(--color-light-blue);
+    margin: 0;
+  }
+
+  .services-list {
+    padding: 112px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .cta-section {
+    background-color: var(--color-light-blue);
+    padding: 96px 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 20px;
+    color: var(--color-muted-text);
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .page-header h1 {
+      font-size: 40px;
+    }
+  }
+</style>

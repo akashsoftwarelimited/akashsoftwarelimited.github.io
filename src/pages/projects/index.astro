@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/cards/ProjectCard.astro';
+import PrimaryButton from '../../components/ui/PrimaryButton.astro';
+import { projects } from '../../data/projects';
+---
+
+<Layout title="Projects | Akash Software Limited" description="Explore our portfolio of digital products and engineering solutions.">
+  <div class="page-header">
+    <div class="container">
+      <h1>Our Projects</h1>
+      <p>A glimpse into the digital products we've brought to life.</p>
+    </div>
+  </div>
+
+  <section class="projects-list">
+    <div class="container">
+      <div class="grid">
+        {projects.map(project => (
+          <ProjectCard
+            title={project.title}
+            category={project.category}
+            image={project.image}
+            href={`/asl-portfolio/projects/${project.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Have a project in mind?</h2>
+      <PrimaryButton text="Let's Talk" href="/asl-portfolio/contact" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .page-header {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 120px 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    font-size: 56px;
+    margin: 0 0 16px 0;
+  }
+
+  .page-header p {
+    font-size: 20px;
+    color: var(--color-light-blue);
+    margin: 0;
+  }
+
+  .projects-list {
+    padding: 112px 0;
+    background-color: var(--color-light-blue);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .cta-section {
+    background-color: var(--color-white);
+    padding: 96px 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 40px;
+    }
+  }
+</style>

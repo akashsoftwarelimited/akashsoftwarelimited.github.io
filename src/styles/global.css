@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+  --color-primary-navy: #004466;
+  --color-cyan: #00A9CC;
+  --color-bright-blue: #006DCC;
+  --color-light-blue: #E5F4FF;
+  --color-white: #FFFFFF;
+  --color-dark-text: #0B2233;
+  --color-muted-text: #5F7485;
+  --color-border: #D9E7EF;
+
+  --gradient-primary: linear-gradient(135deg, #004466, #006DCC);
+  --gradient-accent: linear-gradient(135deg, #00A9CC, #006DCC);
+
+  --radius-card: 12px;
+  --radius-card-large: 16px;
+  --radius-button: 8px;
+
+  --container-width: 1280px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-dark-text);
+  background-color: var(--color-white);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+  color: var(--color-primary-navy);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

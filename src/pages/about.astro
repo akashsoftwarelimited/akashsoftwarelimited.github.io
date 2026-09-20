@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrimaryButton from '../components/ui/PrimaryButton.astro';
+---
+
+<Layout title="About Us | Akash Software Limited" description="Learn more about Akash Software Limited and our engineering culture.">
+  <div class="page-header">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>We are a team of engineers, designers, and strategists building the digital future.</p>
+    </div>
+  </div>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="grid">
+        <div class="text">
+          <h2>Our Mission</h2>
+          <p>
+            At Akash Software Limited, our mission is to empower businesses with scalable, robust, and innovative software solutions. We believe in engineering excellence and design thinking to solve complex problems.
+          </p>
+          <h2>Our Values</h2>
+          <ul>
+            <li><strong>Excellence:</strong> We strive for the highest quality in every line of code.</li>
+            <li><strong>Integrity:</strong> We are transparent and honest with our clients.</li>
+            <li><strong>Innovation:</strong> We continuously learn and adopt new technologies.</li>
+            <li><strong>Collaboration:</strong> We work as an extension of your team.</li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="Team collaborating" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Join Our Team</h2>
+      <p>We're always looking for talented engineers and designers.</p>
+      <PrimaryButton text="View Open Positions" href="/asl-portfolio/careers" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .page-header {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 120px 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    font-size: 56px;
+    margin: 0 0 16px 0;
+  }
+
+  .page-header p {
+    font-size: 20px;
+    color: var(--color-light-blue);
+    margin: 0;
+  }
+
+  .about-content {
+    padding: 112px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .text h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    margin-top: 48px;
+  }
+  
+  .text h2:first-child {
+    margin-top: 0;
+  }
+
+  .text p, .text ul {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-muted-text);
+    margin-bottom: 24px;
+  }
+
+  .text li {
+    margin-bottom: 12px;
+  }
+
+  .text strong {
+    color: var(--color-primary-navy);
+  }
+
+  .image img {
+    width: 100%;
+    border-radius: var(--radius-card-large);
+    box-shadow: 0 12px 32px rgba(11, 34, 51, 0.1);
+  }
+
+  .cta-section {
+    background-color: var(--color-light-blue);
+    padding: 96px 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 20px;
+    color: var(--color-muted-text);
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .page-header h1 {
+      font-size: 40px;
+    }
+  }
+</style>

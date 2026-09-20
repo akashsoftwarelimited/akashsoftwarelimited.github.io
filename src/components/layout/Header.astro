@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets';
+import aslLogo from '../../assets/asl_logo.svg';
+---
+<header class="site-header">
+  <div class="container">
+    <a href="/asl-portfolio/" class="logo">
+      <Image src={aslLogo} alt="Akash Software Limited" width={120} />
+    </a>
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="/asl-portfolio/">Home</a></li>
+        <li><a href="/asl-portfolio/about">About</a></li>
+        <li><a href="/asl-portfolio/services">Services</a></li>
+        <li><a href="/asl-portfolio/projects">Projects</a></li>
+        <li><a href="/asl-portfolio/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="/asl-portfolio/contact" class="header-cta">Start a Project</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+    color: var(--color-primary-navy);
+    text-decoration: none;
+  }
+  .desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+  }
+  .desktop-nav a {
+    text-decoration: none;
+    color: var(--color-dark-text);
+    font-weight: 500;
+    transition: color 200ms ease;
+  }
+  .desktop-nav a:hover {
+    color: var(--color-bright-blue);
+  }
+  .header-cta {
+    background-color: var(--color-bright-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius-button);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 200ms ease;
+  }
+  .header-cta:hover {
+    background-color: var(--color-primary-navy);
+  }
+</style>

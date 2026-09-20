@@ -1,0 +1,57 @@
+---
+interface Props {
+  problem: string;
+  solution: string;
+  benefit: string;
+}
+
+const { problem, solution, benefit } = Astro.props;
+---
+<div class="solution-card">
+  <div class="section problem">
+    <h4>The Challenge</h4>
+    <p>{problem}</p>
+  </div>
+  <div class="section solution">
+    <h4>Our Solution</h4>
+    <p>{solution}</p>
+  </div>
+  <div class="section benefit">
+    <h4>Business Impact</h4>
+    <p>{benefit}</p>
+  </div>
+</div>
+
+<style>
+  .solution-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card-large);
+    padding: 32px;
+    box-shadow: 0 4px 16px -2px rgba(11, 34, 51, 0.05);
+  }
+
+  .section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  h4 {
+    color: var(--color-primary-navy);
+    font-size: 18px;
+    margin: 0 0 12px 0;
+  }
+
+  p {
+    color: var(--color-muted-text);
+    margin: 0;
+    line-height: 1.6;
+  }
+</style>

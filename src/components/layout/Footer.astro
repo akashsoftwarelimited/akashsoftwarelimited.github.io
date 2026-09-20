@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets';
+import aslLogo from '../../assets/asl_logo.svg';
+
+const currentYear = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/asl-portfolio/" class="logo">
+          <Image src={aslLogo} alt="Akash Software Limited" width={120} />
+        </a>
+        <p class="footer-desc">Building Digital Products That Move Businesses Forward.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/asl-portfolio/about">About Us</a></li>
+          <li><a href="/asl-portfolio/careers">Careers</a></li>
+          <li><a href="/asl-portfolio/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/asl-portfolio/services">Web Development</a></li>
+          <li><a href="/asl-portfolio/services">Mobile Apps</a></li>
+          <li><a href="/asl-portfolio/services">Cloud Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/asl-portfolio/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/asl-portfolio/terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Akash Software Limited. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 64px 32px 32px;
+  }
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .logo {
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    color: var(--color-white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .footer-desc {
+    color: var(--color-light-blue);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 300px;
+  }
+  .footer-links h4 {
+    color: var(--color-white);
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+  .footer-links a {
+    color: var(--color-light-blue);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+  .footer-links a:hover {
+    color: var(--color-cyan);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 32px;
+    text-align: center;
+    color: var(--color-light-blue);
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

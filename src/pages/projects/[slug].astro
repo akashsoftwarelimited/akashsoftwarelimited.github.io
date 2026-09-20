@@ -1,0 +1,191 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PrimaryButton from '../../components/ui/PrimaryButton.astro';
+import { projects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={`${project.title} | Projects | Akash Software Limited`} description={project.description}>
+  <div class="page-header">
+    <div class="container">
+      <span class="category-tag">{project.category}</span>
+      <h1>{project.title}</h1>
+    </div>
+  </div>
+
+  <section class="project-hero">
+    <div class="container">
+      <img src={project.image} alt={project.title} class="hero-image" />
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="container">
+      <div class="grid">
+        <div class="main-content">
+          <h2>Overview</h2>
+          <p>{project.description}</p>
+          
+          <h2>The Challenge</h2>
+          <p>
+            [Placeholder text for challenge. Describe the business problem, user pain points, or technical hurdles that needed to be overcome.]
+          </p>
+
+          <h2>Our Solution</h2>
+          <p>
+            [Placeholder text for solution. Detail how ASL addressed the challenge, the architectural decisions made, and the key features implemented.]
+          </p>
+        </div>
+        
+        <div class="sidebar">
+          <div class="tech-card">
+            <h3>Technologies Used</h3>
+            <ul class="tech-list">
+              {project.technologies.map(tech => (
+                <li>{tech}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to start your own project?</h2>
+      <PrimaryButton text="Contact Us" href="/asl-portfolio/contact" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .page-header {
+    background-color: var(--color-primary-navy);
+    color: var(--color-white);
+    padding: 96px 0 64px;
+    text-align: center;
+  }
+
+  .category-tag {
+    display: inline-block;
+    background-color: var(--color-cyan);
+    color: var(--color-primary-navy);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    font-size: 56px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .project-hero {
+    background-color: var(--color-primary-navy);
+    padding-bottom: 64px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-card-large);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+  }
+
+  .details {
+    padding: 112px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 64px;
+  }
+
+  .main-content h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    margin-top: 48px;
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-muted-text);
+  }
+
+  .tech-card {
+    background-color: var(--color-light-blue);
+    padding: 32px;
+    border-radius: var(--radius-card);
+  }
+
+  .tech-card h3 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 22px;
+  }
+
+  .tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tech-list li {
+    background-color: var(--color-white);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: var(--color-primary-navy);
+    border: 1px solid var(--color-border);
+  }
+
+  .cta-section {
+    background-color: var(--color-light-blue);
+    padding: 96px 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 40px;
+    }
+  }
+</style>
