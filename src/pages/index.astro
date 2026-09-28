@@ -7,18 +7,19 @@ import ProjectCard from '../components/cards/ProjectCard.astro';
 
 import { services } from '../data/services';
 import { projects } from '../data/projects';
+import siteData from '../data/site.json';
 
 const featuredServices = services.filter(s => s.featured);
 const featuredProjects = projects.filter(p => p.featured);
 ---
 
-<Layout title="Akash Software Limited | Engineering & Digital Solutions" description="Akash Software Limited helps businesses transform ideas into scalable digital products.">
+<Layout title={`${siteData.name} | Engineering & Digital Solutions`} description={siteData.description}>
   <section class="hero">
     <div class="container hero-content">
       <span class="eyebrow">SOFTWARE ENGINEERING & DIGITAL SOLUTIONS</span>
-      <h1>Building Digital Products That Move Businesses Forward.</h1>
+      <h1>{siteData.tagline}</h1>
       <p class="description">
-        Akash Software Limited helps businesses transform ideas into scalable, reliable, and user-focused digital products through modern software engineering.
+        {siteData.description}
       </p>
       <div class="hero-actions">
         <PrimaryButton text="Start a Project" href="/start-a-project" />

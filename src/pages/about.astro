@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PrimaryButton from '../components/ui/PrimaryButton.astro';
+import aboutData from '../data/about.json';
+import siteData from '../data/site.json';
 ---
 
-<Layout title="About Us | Akash Software Limited" description="Learn more about Akash Software Limited and our engineering culture.">
+<Layout title={`About Us | ${siteData.name}`} description="Learn more about our company and engineering culture.">
   <div class="page-header">
     <div class="container">
       <h1>About Us</h1>
@@ -17,18 +19,17 @@ import PrimaryButton from '../components/ui/PrimaryButton.astro';
         <div class="text">
           <h2>Our Mission</h2>
           <p>
-            At Akash Software Limited, our mission is to empower businesses with scalable, robust, and innovative software solutions. We believe in engineering excellence and design thinking to solve complex problems.
+            {aboutData.mission}
           </p>
           <h2>Our Values</h2>
           <ul>
-            <li><strong>Excellence:</strong> We strive for the highest quality in every line of code.</li>
-            <li><strong>Integrity:</strong> We are transparent and honest with our clients.</li>
-            <li><strong>Innovation:</strong> We continuously learn and adopt new technologies.</li>
-            <li><strong>Collaboration:</strong> We work as an extension of your team.</li>
+            {aboutData.values.map(value => (
+              <li><strong>{value.title}:</strong> {value.description}</li>
+            ))}
           </ul>
         </div>
         <div class="image">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="Team collaborating" />
+          <img src={aboutData.image} alt="Team collaborating" />
         </div>
       </div>
     </div>

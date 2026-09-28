@@ -3,9 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import ProjectCard from '../../components/cards/ProjectCard.astro';
 import PrimaryButton from '../../components/ui/PrimaryButton.astro';
 import { projects } from '../../data/projects';
+import siteData from '../../data/site.json';
 ---
 
-<Layout title="Projects | Akash Software Limited" description="Explore our portfolio of digital products and engineering solutions.">
+<Layout title={`Projects | ${siteData.name}`} description="Explore our portfolio of digital products and engineering solutions.">
   <div class="page-header">
     <div class="container">
       <h1>Our Projects</h1>

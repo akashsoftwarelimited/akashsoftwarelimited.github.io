@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import aslLogo from '../../assets/asl_logo.svg';
+import siteData from '../../data/site.json';
 ---
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo">
-      <Image src={aslLogo} alt="Akash Software Limited" width={120} />
+      <Image src={aslLogo} alt={siteData.name} width={120} />
     </a>
     <nav class="desktop-nav">
       <ul>

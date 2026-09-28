@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PrimaryButton from '../components/ui/PrimaryButton.astro';
+import contactData from '../data/contact.json';
+import siteData from '../data/site.json';
 ---
 
-<Layout title="Contact Us | Akash Software Limited" description="Get in touch with Akash Software Limited to discuss your project.">
+<Layout title={`Contact Us | ${siteData.name}`} description={`Get in touch with ${siteData.name} to discuss your project.`}>
   <div class="page-header">
     <div class="container">
       <h1>Let's Build Something Great Together.</h1>
@@ -18,19 +20,19 @@ import PrimaryButton from '../components/ui/PrimaryButton.astro';
           <h2>Contact Information</h2>
           <div class="info-item">
             <strong>Email</strong>
-            <p>hello@akashsoftware.com</p>
+            <p>{contactData.email}</p>
           </div>
           <div class="info-item">
             <strong>Phone</strong>
-            <p>+1 (555) 123-4567</p>
+            <p>{contactData.phone}</p>
           </div>
           <div class="info-item">
             <strong>Office Address</strong>
-            <p>123 Tech Boulevard<br />Suite 400<br />Innovation City, ST 12345</p>
+            <p>{contactData.address.line1}<br />{contactData.address.line2}<br />{contactData.address.city}, {contactData.address.state} {contactData.address.zip}</p>
           </div>
           <div class="info-item">
             <strong>Business Hours</strong>
-            <p>Monday - Friday<br />9:00 AM - 6:00 PM EST</p>
+            <p>{contactData.businessHours.days}<br />{contactData.businessHours.hours}</p>
           </div>
         </div>
 

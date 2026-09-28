@@ -3,9 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import ServiceCard from '../../components/cards/ServiceCard.astro';
 import PrimaryButton from '../../components/ui/PrimaryButton.astro';
 import { services } from '../../data/services';
+import siteData from '../../data/site.json';
 ---
 
-<Layout title="Services | Akash Software Limited" description="Explore the engineering and digital services offered by Akash Software Limited.">
+<Layout title={`Services | ${siteData.name}`} description={`Explore the engineering and digital services offered by ${siteData.name}.`}>
   <div class="page-header">
     <div class="container">
       <h1>Our Services</h1>

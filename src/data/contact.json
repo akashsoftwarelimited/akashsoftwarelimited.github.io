@@ -1,0 +1,15 @@
+{
+  "email": "hello@akashsoftware.com",
+  "phone": "+1 (555) 123-4567",
+  "address": {
+    "line1": "123 Tech Boulevard",
+    "line2": "Suite 400",
+    "city": "Innovation City",
+    "state": "ST",
+    "zip": "12345"
+  },
+  "businessHours": {
+    "days": "Monday - Friday",
+    "hours": "9:00 AM - 6:00 PM EST"
+  }
+}

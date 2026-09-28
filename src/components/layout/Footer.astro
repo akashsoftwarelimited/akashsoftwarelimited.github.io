@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import aslLogo from '../../assets/asl_logo.svg';
+import siteData from '../../data/site.json';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -9,9 +10,9 @@ const currentYear = new Date().getFullYear();
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo">
-          <Image src={aslLogo} alt="Akash Software Limited" width={120} />
+          <Image src={aslLogo} alt={siteData.name} width={120} />
         </a>
-        <p class="footer-desc">Building Digital Products That Move Businesses Forward.</p>
+        <p class="footer-desc">{siteData.footerDescription}</p>
       </div>
       <div class="footer-links">
         <h4>Company</h4>
@@ -38,7 +39,7 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {currentYear} Akash Software Limited. All rights reserved.</p>
+      <p>&copy; {currentYear} {siteData.name}. All rights reserved.</p>
     </div>
   </div>
 </footer>

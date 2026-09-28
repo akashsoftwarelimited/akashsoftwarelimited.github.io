@@ -11,9 +11,10 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+import siteData from '../../data/site.json';
 ---
 
-<Layout title={`${project.title} | Projects | Akash Software Limited`} description={project.description}>
+<Layout title={`${project.title} | Projects | ${siteData.name}`} description={project.description}>
   <div class="page-header">
     <div class="container">
       <span class="category-tag">{project.category}</span>

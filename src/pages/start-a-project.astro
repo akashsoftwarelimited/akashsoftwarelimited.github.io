@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PrimaryButton from '../components/ui/PrimaryButton.astro';
+import siteData from '../data/site.json';
 ---
 
-<Layout title="Start a Project | Akash Software Limited" description="Tell us about your project. Share your goals, timeline, and budget — and we'll get back to you with a tailored proposal.">
+<Layout title={`Start a Project | ${siteData.name}`} description="Tell us about your project. Share your goals, timeline, and budget — and we'll get back to you with a tailored proposal.">
   <!-- Hero Section — distinct gradient treatment, not the same flat navy as Contact -->
   <div class="project-hero">
     <div class="container">
@@ -335,7 +336,7 @@ import PrimaryButton from '../components/ui/PrimaryButton.astro';
           <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="3"/><path d="M20 33L28 41L44 23" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h2>Your Project Request Has Been Submitted!</h2>
-        <p class="success-lead">Thank you for choosing Akash Software Limited. Our team will review your project details and get back to you within <strong>2 business days</strong> with a tailored response.</p>
+        <p class="success-lead">Thank you for choosing {siteData.name}. Our team will review your project details and get back to you within <strong>2 business days</strong> with a tailored response.</p>
         <div class="success-next-steps">
           <h3>What Happens Next?</h3>
           <ol>

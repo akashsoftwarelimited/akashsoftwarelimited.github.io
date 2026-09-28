@@ -3,12 +3,14 @@ import '../styles/global.css';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 
+import siteData from '../data/site.json';
+
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = 'Akash Software Limited Portfolio' } = Astro.props;
+const { title, description = siteData.description } = Astro.props;
 ---
 
 <!doctype html>

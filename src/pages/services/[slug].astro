@@ -11,9 +11,10 @@ export function getStaticPaths() {
 }
 
 const { service } = Astro.props;
+import siteData from '../../data/site.json';
 ---
 
-<Layout title={`${service.title} | Services | Akash Software Limited`} description={service.description}>
+<Layout title={`${service.title} | Services | ${siteData.name}`} description={service.description}>
   <div class="page-header">
     <div class="container">
       <span class="icon-large">{service.icon}</span>

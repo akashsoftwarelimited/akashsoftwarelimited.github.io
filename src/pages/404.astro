@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import PrimaryButton from '../components/ui/PrimaryButton.astro';
 import SecondaryButton from '../components/ui/SecondaryButton.astro';
+import siteData from '../data/site.json';
 ---
 
-<Layout title="Page Not Found | Akash Software Limited">
+<Layout title={`Page Not Found | ${siteData.name}`}>
   <div class="not-found">
     <div class="container">
       <h1>404</h1>
